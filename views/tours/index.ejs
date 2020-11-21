@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate')%>
 <div id="cluster-map" class="mt-4"></div>
 <div class="container">
-    <h1>Search and view our Tours</h1>
+    <h1 class="text-center">Search and view our Tours</h1>
 
     <% for (let tour of tours){%>
     <div class="card mb-3">
@@ -18,7 +18,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><%= tour.title %> </h5>
 
-                    <p class="card-text"><%= tour.description %></p>
+                    <p class="card-text"><%= tour.description.substring(0, 300) %></p>
                     <p class="card-text">
                         <small class="text-muted"><%= tour.location%></small>
                     </p>
