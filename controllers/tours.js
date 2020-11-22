@@ -5,8 +5,62 @@ const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 const { cloudinary } = require("../cloudinary");
 
 module.exports.index = async (req, res) => {
-  const tours = await Tour.find({}).populate("popupText");
-  res.render("tours/index", { tours });
+  var perPage = 4;
+  var pageQuery = parseInt(req.query.page);
+  var pageNumber = pageQuery ? pageQuery : 1;
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), "gi");
+    await Tour.find({ title: regex })
+      .skip(perPage * pageNumber - perPage)
+      .limit(perPage)
+      .exec(function (err, allTours) {
+        Tour.countDocuments({ title: regex }).exec(function (err, count) {
+          if (err) {
+            console.log(err);
+            res.redirect("back");
+          } else {
+            res.render("tours/index", {
+              tours: allTours,
+              current: pageNumber,
+              pages: Math.ceil(count / perPage),
+              search: req.query.search,
+            });
+          }
+        });
+      });
+  } else {
+    // get all campgrounds from DB
+    await Tour.find({})
+      .skip(perPage * pageNumber - perPage)
+      .limit(perPage)
+      .exec(function (err, allTours) {
+        Tour.countDocuments().exec(function (err, count) {
+          if (err) {
+            console.log(err);
+          } else {
+            res.render("tours/index", {
+              tours: allTours,
+              current: pageNumber,
+              pages: Math.ceil(count / perPage),
+              search: false,
+            });
+          }
+        });
+      });
+  }
+  // if (req.query.search) {
+  //   const regex = new RegExp(escapeRegex(req.query.search), "gi");
+  //   await Tour.find({ title: regex }, function (err, allTours) {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       res.render("tours/index", { tours: allTours });
+  //     }
+  //   });
+  // } else {
+  //   const tours = await Tour.find({}).populate("popupText");
+  //   res.render("tours/index", { tours });
+  // }
 };
 
 module.exports.renderNewForm = (req, res) => {
@@ -81,3 +135,7 @@ module.exports.deleteTour = async (req, res) => {
   req.flash("success", "Successfully deleted tour");
   res.redirect("/tours");
 };
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}

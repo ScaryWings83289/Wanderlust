@@ -2,6 +2,12 @@
 <div id="cluster-map" class="mt-4"></div>
 <div class="container">
     <h1 class="text-center">Search and view our Tours</h1>
+    <div class="my-4">
+        <form action="/tours" method="GET" class="d-flex">
+            <input class="form-control mr-2" type="search" name="search" placeholder="Search a tour" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
 
     <% for (let tour of tours){%>
     <div class="card mb-3">
@@ -28,6 +34,40 @@
         </div>
     </div>
     <% }%>
+    
+    <nav aria-label="Page navigation">
+        <% if (pages && pages > 0) { %>
+        <ul class="pagination justify-content-center">
+            <% if (current == 1) { %>
+            <li class="page-item disabled"><a class="page-link">«</a></li>
+            <% } else { %>
+            <li><a class="page-link" href="/tours?page=<%= Number(current) - 1 %>">«</a></li>
+            <% } %>
+    
+            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+            <% if (i !== 1) { %>
+            <li class="page-item disabled"><a class="page-link">...</a></li>
+            <% } %>
+            <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+            <% if (i == current) { %>
+            <li class="active"><a class="page-link"><%= i %></a></li>
+            <% } else { %>
+            <li><a class="page-link" href="/tours?page=<%= i %>"><%= i %></a></li>
+            <% } %>
+            <% if (i == Number(current) + 4 && i < pages) { %>
+            <li class="page-item disabled"><a class="page-link">...</a></li>
+            <% } %>
+            <% } %>
+    
+            <% if (current == pages) { %>
+            <li class="page-item disabled"><a class="page-link">»</a></li>
+            <% } else { %>
+            <li><a class="page-link" href="/tours?page=<%= Number(current) + 1 %>">»</a></li>
+            <% } %>
+        </ul>
+        <% } %>
+    </nav>
+
 </div>
 <script>
     const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
