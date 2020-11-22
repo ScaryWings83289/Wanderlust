@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    position: relative;
+    min-height: 88vh;
+    /* background: #fee648; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section .container-fluid {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    background: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+section .container-fluid .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+section .container-fluid .user .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    /* background: #ffff00; */
+    transition: 0.5s;
+}
+
+section .container-fluid .user .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .container-fluid .user .formBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+}
+
+section .container-fluid .user .formBx form h2{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+section .container-fluid .user .formBx form input{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333333;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+section .container-fluid .user .formBx form button{
+    /* max-width: 100px; */
+    width: 100%;
+    padding: 10px;
+    background: #677eff;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+section .container-fluid .user .formBx form button:hover {
+    background:  #405CFC;
+}
+
+section .container-fluid .user .formBx form .forgot{
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 0.7px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+
+section .container-fluid .user .formBx form .forgot a{
+    text-decoration: none;
+    color: #405CFC;
+}
+
+section .container-fluid .user .formBx form .signup{
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+section .container-fluid .user .formBx form .signup a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #677eff;
+}
+
+@media (max-width: 992px){
+    section {
+        padding: 0px;
+    }
+    section .container-fluid{
+        max-height: 70vh;
+        max-width: 400px;
+    }
+    section .container-fluid .imgBx{
+        display: none;
+    }
+    section .container-fluid .user .formBx{
+        width: 100%;
+        padding: 10px;
+    }
+}
