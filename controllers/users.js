@@ -14,7 +14,7 @@ module.exports.register = async (req, res, next) => {
     const registeredUser = await User.register(user, password);
     req.login(registeredUser, (err) => {
       if (err) return next(err);
-      req.flash("success", "Welcome to Yelp Camp!");
+      req.flash("success", "Welcome to Wanderlust!");
       res.redirect("/tours");
     });
   } catch (e) {
@@ -28,7 +28,7 @@ module.exports.renderLogin = (req, res) => {
 };
 
 module.exports.login = (req, res) => {
-  req.flash("success", "welcome back!");
+  req.flash("success", "Welcome back!");
   const redirectUrl = req.session.returnTo || "/tours";
   delete req.session.returnTo;
   res.redirect(redirectUrl);
@@ -70,11 +70,19 @@ module.exports.forgot = (req, res, next) => {
         });
       },
       function (token, user, done) {
+        // var smtpTransport = nodemailer.createTransport({
+        //   service: "Gmail",
+        //   auth: {
+        //     user: "divyankarbhargav@gmail.com",
+        //     pass: process.env.GMAILPW,
+        //   },
+        // });
         var smtpTransport = nodemailer.createTransport({
-          service: "Gmail",
+          host: process.env.EMAIL_HOST,
+          port: process.env.EMAIL_PORT,
           auth: {
-            user: "divyankarbhargav@gmail.com",
-            pass: process.env.GMAILPW,
+            user: process.env.EMAIL_USERNAME,
+            pass: process.env.EMAIL_PASSWORD,
           },
         });
         var mailOptions = {
@@ -162,11 +170,19 @@ module.exports.reset = (req, res) => {
         );
       },
       function (user, done) {
+        // var smtpTransport = nodemailer.createTransport({
+        //   service: "Gmail",
+        //   auth: {
+        //     user: "divyankar@gmail.com",
+        //     pass: process.env.GMAILPW,
+        //   },
+        // });
         var smtpTransport = nodemailer.createTransport({
-          service: "Gmail",
+          host: process.env.EMAIL_HOST,
+          port: process.env.EMAIL_PORT,
           auth: {
-            user: "divyankar@gmail.com",
-            pass: process.env.GMAILPW,
+            user: process.env.EMAIL_USERNAME,
+            pass: process.env.EMAIL_PASSWORD,
           },
         });
         var mailOptions = {
