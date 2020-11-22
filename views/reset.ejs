@@ -1,34 +1,25 @@
 <% layout('layouts/boilerplate')%>
 
-<div class="container d-flex justify-content-center align-items-center my-4">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-            <div class="card shadow">
-                <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
-                    alt="" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title">Reset password</h5>
-                    <form action="/reset/<%= token %>" method="POST" class="validated-form" novalidate>
-                        <div class="mb-3">
-							<label class="form-label" for="password">New password</label>
-							<input class="form-label form-control" type="password" id="password" name="password" autofocus required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-						</div>
-						<div class="mb-3">
-							<label class="form-label" for="confirm">Confirm password</label>
-							<input class="form-label form-control" type="password" id="confirm" name="confirm" autofocus required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-						</div>
-						<div class="mb-3">
-							<button type="submit" class="form-control btn btn-primary">Update Password</button>
-						</div>
-                    </form>
-                </div>
+<section>
+    <div class="container-fluid">
+        <div class="user singinBx">
+            <div class="imgBx">
+                <img src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="1">
+            </div>
+            <div class="formBx">
+                <form action="/reset/<%= token %>" method="POST" novalidate>
+                    <h2>Reset Password</h2>
+                    <input type="password" name="password" placeholder="Enter new password" required> 
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <input type="password" name="confirm" placeholder="Confirm your password" required> 
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <button>Update Password</button>
+                </form>
             </div>
         </div>
     </div>
-</div>
+</section>
