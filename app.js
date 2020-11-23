@@ -107,7 +107,7 @@ const connectSrcUrls = [
   "https://b.tiles.mapbox.com/",
   "https://events.mapbox.com/",
 ];
-const fontSrcUrls = [];
+const fontSrcUrls = ["https://fonts.gstatic.com/"];
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
@@ -125,6 +125,7 @@ app.use(
         "https://images.unsplash.com/",
       ],
       fontSrc: ["'self'", ...fontSrcUrls],
+      mediaSrc: ["'self'"],
     },
   })
 );
