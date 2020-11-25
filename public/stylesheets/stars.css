@@ -10,7 +10,6 @@ body{
 }
 
 .show{
-  margin-top: 100px;
   margin-bottom: 20px;
 }
 
@@ -140,7 +139,7 @@ body{
 
 @media(max-width: 600px){
   .show{
-    margin-top: 70px;
+    margin-top: 0px;
   }
   .show .show-image{
     height: 200px;

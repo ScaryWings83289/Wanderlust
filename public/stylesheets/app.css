@@ -38,7 +38,6 @@ nav.navbar{
 }
 
 #cluster-map {
-    margin-top: 80px;
     width: 100%;
     height: 500px;
     border-radius: 20px;
@@ -185,5 +184,243 @@ nav.navbar{
     }
     .description .card-body button a{
         font-size: 18px;
+    }
+}
+
+.new{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.new .section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.new .section-title h1 {
+    display: inline-block;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+.new .section-title h1::before {
+    content: '';
+    left: 20%;
+    position: absolute;
+    height: 2px;
+    right: 20%;
+    background-color: #febd01;
+    bottom: 0px;
+}
+
+.new .new-description .form-label{
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.new .new-description .inputs{
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #ffffff;
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+
+.new .new-description .input-group{
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);   
+}
+
+.new .new-description .input-group-text{
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.new .new-description .input-group input{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.new .new-description .form-file{
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);  
+}
+
+.new .new-description .form-file-text{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff; 
+    padding: 10px;
+}
+
+.new .new-description .form-file-button{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 10px; 
+}
+
+.new .new-description .button{
+    padding: 5px 20px;
+    font-size: 20px;
+    background: transparent;
+    color: #febd01;
+    border: 1px solid #febd01;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+.new .new-description .button:hover{
+    color: #000000;
+    background: #febd01;
+}
+
+.new .new-description p{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.new .new-description p a{
+    text-decoration: none;
+    color: #677EFF;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px){
+    .new {
+        margin-top: 0px;
+    }
+}
+
+.edit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit .section-title {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.edit .section-title h1 {
+    display: inline-block;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+.edit .section-title h1::before {
+    content: '';
+    left: 20%;
+    position: absolute;
+    height: 2px;
+    right: 20%;
+    background-color: #febd01;
+    bottom: 0px;
+}
+
+.edit .edit-description .form-label{
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.edit .edit-description .inputs{
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: #ffffff;
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+
+.edit .edit-description .input-group{
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);   
+}
+
+.edit .edit-description .input-group-text{
+    background: transparent;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 10px;
+}
+
+.edit .edit-description .input-group input{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.edit .edit-description .form-file{
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);  
+}
+
+.edit .edit-description .form-file-text{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff; 
+    padding: 10px;
+}
+
+.edit .edit-description .form-file-button{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 10px; 
+}
+
+.edit .edit-description .form-check-inline{
+    margin-right: 0.4rem;
+}
+
+.edit .edit-description .name{
+    color: #ffffff;
+}
+
+.edit .edit-description p{
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.edit .edit-description p a{
+    text-decoration: none;
+    color: #677EFF;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px){
+    .edit {
+        margin-top: 0px;
     }
 }
