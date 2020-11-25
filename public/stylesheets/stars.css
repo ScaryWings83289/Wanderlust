@@ -124,6 +124,13 @@ body{
   color: #99cc66;
 }
 
+.review .card .card-body .card-title span{
+  float: right;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .review .card .card-body .card-text{
   color: #ffffff;
   font-size: 15px;
@@ -174,7 +181,10 @@ body{
   .review .card .card-body .card-title{
     font-size: 15px;
   }
-  .review .card .card-body .card-text{
+  .review .card .card-body .card-title span{
+    font-size: 13px;
+  }
+ .review .card .card-body .card-text{
     font-size: 13px;
   }
   .review .card .card-body .btn-danger{

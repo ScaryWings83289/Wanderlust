@@ -43,7 +43,7 @@
             </div>
             <% } %>
             <div class="card-footer">
-                2 days ago
+                <%= moment(tour.createdAt).fromNow() %>
             </div>
         </div>
     </div>
@@ -78,7 +78,7 @@
         <% for(let review of tour.reviews) { %>
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title"> <%= review.author.username%></h5>
+                <h5 class="card-title"> <%= review.author.username%> <span><%= moment(review.createdAt).fromNow() %></span></h5>
                 <p class="starability-result" data-rating="<%=review.rating%>">
                     Rated: <%= review.rating %> stars
                 </p>

@@ -55,6 +55,8 @@ app.use(
   })
 );
 
+app.locals.moment = require("moment");
+
 const secret = process.env.SECRET || "thisshouldbeabettersecret!";
 
 const store = new MongoStore({
