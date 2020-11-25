@@ -1,7 +1,7 @@
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/light-v10", // stylesheet location
+  style: "mapbox://styles/scarywings83289/ckhvqicdx07ig19o10602md7b", // stylesheet location
   center: tour.geometry.coordinates, // starting position [lng, lat]
   zoom: 10, // starting zoom
 });

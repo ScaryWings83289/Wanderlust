@@ -107,7 +107,10 @@ const connectSrcUrls = [
   "https://b.tiles.mapbox.com/",
   "https://events.mapbox.com/",
 ];
-const fontSrcUrls = ["https://fonts.gstatic.com/"];
+const fontSrcUrls = [
+  "https://fonts.gstatic.com/",
+  "https://use.fontawesome.com/releases/v5.15.1/",
+];
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
@@ -121,7 +124,7 @@ app.use(
         "'self'",
         "blob:",
         "data:",
-        "https://res.cloudinary.com/scarywings83289/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
+        "https://res.cloudinary.com/scarywings83289/image/upload/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
         "https://images.unsplash.com/",
       ],
       fontSrc: ["'self'", ...fontSrcUrls],

@@ -1,12 +1,13 @@
 <% layout('layouts/boilerplate')%>
 <link rel="stylesheet" href="/stylesheets/stars.css">
-<div class="row mt-4">
-    <div class="col-md-6">
+
+<div class="row show">
+    <div class="col-md-6 mb-3">
         <div id="campgroundCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <% tour.images.forEach((img, i) => {  %>
                 <div class="carousel-item <%= i === 0 ? 'active' : ''%>">
-                    <img src="<%= img.url%>" class="d-block w-100" alt="">
+                    <img src="<%= img.url%>" class="d-block w-100 show-image" alt="">
                 </div>
                 <% }) %>
 
@@ -23,43 +24,36 @@
             <% } %>
         </div>
 
-        <div class="card mb-3">
+        <div class="card show-description">
             <div class="card-body">
                 <h5 class="card-title"><%= tour.title%></h5>
                 <p class="card-text"><%= tour.description%></p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item text-muted"><%= tour.location%></li>
+                <li class="list-group-item"><%= tour.location%></li>
                 <li class="list-group-item">Submitted by <%= tour.author.username%></li>
                 <li class="list-group-item">Rs. <%= tour.price%> / person</li>
             </ul>
             <%  if( currentUser && tour.author.equals(currentUser._id))  {%>
-            <div class="card-body">
+            <div class="card-body buttons">
                 <a class="card-link btn btn-info" href="/tours/<%=tour._id%>/edit">Edit</a>
                 <form class="d-inline" action="/tours/<%=tour._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-danger">Delete</button>
                 </form>
             </div>
             <% } %>
-            <div class="card-footer text-muted">
+            <div class="card-footer">
                 2 days ago
             </div>
         </div>
-
     </div>
-    <div class="col-md-6">
-        <div id='map' ></div>
-
+    <div class="col-md-6 review mb-3">
+        <div id='map'></div>
         <% if(currentUser){ %>
         <h2>Leave a Review</h2>
         <form action="/tours/<%=tour._id%>/reviews" method="POST" class="mb-3 validated-form" novalidate>
-            <!-- <div class="mb-3">
-                <label class="form-label" for="rating">Rating</label>
-                <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
-            </div> -->
             <fieldset class="starability-basic">
-                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
-                    aria-label="No rating." />
+                <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
                 <input type="radio" id="first-rate1" name="review[rating]" value="1" />
                 <label for="first-rate1" title="Terrible">1 star</label>
                 <input type="radio" id="first-rate2" name="review[rating]" value="2" />
@@ -71,7 +65,7 @@
                 <input type="radio" id="first-rate5" name="review[rating]" value="5" />
                 <label for="first-rate5" title="Amazing">5 stars</label>
             </fieldset>
-            <div class="mb-3">
+            <div class="mb-3 review-body">
                 <label class="form-label" for="body">Review Text</label>
                 <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3" required></textarea>
                 <div class="valid-feedback">
@@ -82,7 +76,7 @@
         </form>
         <% } %>
         <% for(let review of tour.reviews) { %>
-        <div class="card mb-3 ">
+        <div class="card mb-3">
             <div class="card-body">
                 <h5 class="card-title"> <%= review.author.username%></h5>
                 <p class="starability-result" data-rating="<%=review.rating%>">

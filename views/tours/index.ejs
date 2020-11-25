@@ -1,16 +1,18 @@
 <% layout('layouts/boilerplate')%>
-<div id="cluster-map" class="mt-4"></div>
-<div class="container">
-    <h1 class="text-center">Search and view our Tours</h1>
-    <div class="my-4">
+<div id="cluster-map"></div>
+<div class="container show-container">
+    <div class="section-title">
+        <h1>Search and view our Tours</h1>
+    </div>
+    <div class="mb-4">
         <form action="/tours" method="GET" class="d-flex">
-            <input class="form-control mr-2" type="search" name="search" placeholder="Search a tour" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control form-search mr-2" type="search" name="search" placeholder="Search a tour" aria-label="Search">
+            <button class="btn btn-outline-warning" type="submit">Search</button>
         </form>
     </div>
 
     <% for (let tour of tours){%>
-    <div class="card mb-3">
+    <div class="card description">
         <div class="row">
             <div class="col-md-4">
                 <%if(tour.images.length) {%>
@@ -26,9 +28,9 @@
 
                     <p class="card-text"><%= tour.description.substring(0, 300) %></p>
                     <p class="card-text">
-                        <small class="text-muted"><%= tour.location%></small>
+                        <small><%= tour.location%></small>
                     </p>
-                    <a class="btn btn-primary" href="/tours/<%=tour._id%>">View <%=tour.title%></a>
+                    <button><a href="/tours/<%=tour._id%>">View <%=tour.title%></a></button>
                 </div>
             </div>
         </div>
