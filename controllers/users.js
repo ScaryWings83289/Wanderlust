@@ -73,7 +73,7 @@ module.exports.forgot = (req, res, next) => {
         var smtpTransport = nodemailer.createTransport({
           service: "Gmail",
           auth: {
-            user: "lucifer2886@gmail.com",
+            user: "lucifer2686@gmail.com",
             pass: process.env.GMAILPW,
           },
         });
@@ -87,7 +87,7 @@ module.exports.forgot = (req, res, next) => {
         // });
         var mailOptions = {
           to: user.email,
-          from: "lucifer2886@gmail.com",
+          from: "lucifer2686@gmail.com",
           subject: "Wanderlust Password Reset",
           text:
             "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
@@ -173,7 +173,7 @@ module.exports.reset = (req, res) => {
         var smtpTransport = nodemailer.createTransport({
           service: "Gmail",
           auth: {
-            user: "lucifer2886@gmail.com",
+            user: "lucifer2686@gmail.com",
             pass: process.env.GMAILPW,
           },
         });
@@ -187,7 +187,7 @@ module.exports.reset = (req, res) => {
         // });
         var mailOptions = {
           to: user.email,
-          from: "lucifer2886@gmail.com",
+          from: "lucifer2686@gmail.com",
           subject: "Your password has been changed",
           text:
             "Hello,\n\n" +
