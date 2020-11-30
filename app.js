@@ -23,8 +23,6 @@ const reviewRoutes = require("./routes/reviews");
 
 const MongoStore = require("connect-mongo")(session);
 
-// const dbUrl = process.env.DB_URL;
-
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/tourism";
 
 mongoose.connect(dbUrl, {
