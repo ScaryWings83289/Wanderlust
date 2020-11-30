@@ -48,19 +48,6 @@ module.exports.index = async (req, res) => {
         });
       });
   }
-  // if (req.query.search) {
-  //   const regex = new RegExp(escapeRegex(req.query.search), "gi");
-  //   await Tour.find({ title: regex }, function (err, allTours) {
-  //     if (err) {
-  //       console.log(err);
-  //     } else {
-  //       res.render("tours/index", { tours: allTours });
-  //     }
-  //   });
-  // } else {
-  //   const tours = await Tour.find({}).populate("popupText");
-  //   res.render("tours/index", { tours });
-  // }
 };
 
 module.exports.renderNewForm = (req, res) => {
