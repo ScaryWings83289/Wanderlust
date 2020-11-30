@@ -70,24 +70,24 @@ module.exports.forgot = (req, res, next) => {
         });
       },
       function (token, user, done) {
-        // var smtpTransport = nodemailer.createTransport({
-        //   service: "Gmail",
-        //   auth: {
-        //     user: "divyankarbhargav@gmail.com",
-        //     pass: process.env.GMAILPW,
-        //   },
-        // });
         var smtpTransport = nodemailer.createTransport({
-          host: process.env.EMAIL_HOST,
-          port: process.env.EMAIL_PORT,
+          service: "Gmail",
           auth: {
-            user: process.env.EMAIL_USERNAME,
-            pass: process.env.EMAIL_PASSWORD,
+            user: "lucifer2886@gmail.com",
+            pass: process.env.GMAILPW,
           },
         });
+        // var smtpTransport = nodemailer.createTransport({
+        //   host: process.env.EMAIL_HOST,
+        //   port: process.env.EMAIL_PORT,
+        //   auth: {
+        //     user: process.env.EMAIL_USERNAME,
+        //     pass: process.env.EMAIL_PASSWORD,
+        //   },
+        // });
         var mailOptions = {
           to: user.email,
-          from: "divyankarbhargav@gmail.com",
+          from: "lucifer2886@gmail.com",
           subject: "Wanderlust Password Reset",
           text:
             "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
@@ -170,24 +170,24 @@ module.exports.reset = (req, res) => {
         );
       },
       function (user, done) {
-        // var smtpTransport = nodemailer.createTransport({
-        //   service: "Gmail",
-        //   auth: {
-        //     user: "divyankar@gmail.com",
-        //     pass: process.env.GMAILPW,
-        //   },
-        // });
         var smtpTransport = nodemailer.createTransport({
-          host: process.env.EMAIL_HOST,
-          port: process.env.EMAIL_PORT,
+          service: "Gmail",
           auth: {
-            user: process.env.EMAIL_USERNAME,
-            pass: process.env.EMAIL_PASSWORD,
+            user: "lucifer2886@gmail.com",
+            pass: process.env.GMAILPW,
           },
         });
+        // var smtpTransport = nodemailer.createTransport({
+        //   host: process.env.EMAIL_HOST,
+        //   port: process.env.EMAIL_PORT,
+        //   auth: {
+        //     user: process.env.EMAIL_USERNAME,
+        //     pass: process.env.EMAIL_PASSWORD,
+        //   },
+        // });
         var mailOptions = {
           to: user.email,
-          from: "divyankar@mail.com",
+          from: "lucifer2886@gmail.com",
           subject: "Your password has been changed",
           text:
             "Hello,\n\n" +
