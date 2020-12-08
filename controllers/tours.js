@@ -8,6 +8,7 @@ module.exports.index = async (req, res) => {
   var perPage = 4;
   var pageQuery = parseInt(req.query.page);
   var pageNumber = pageQuery ? pageQuery : 1;
+  var noMatch = null;
   if (req.query.search) {
     const regex = new RegExp(escapeRegex(req.query.search), "gi");
     await Tour.find({ title: regex })
@@ -19,11 +20,15 @@ module.exports.index = async (req, res) => {
             console.log(err);
             res.redirect("back");
           } else {
+            if (allTours.length < 1) {
+              noMatch = "No tours match that query, please try again.";
+            }
             res.render("tours/index", {
               tours: allTours,
               current: pageNumber,
               pages: Math.ceil(count / perPage),
               search: req.query.search,
+              noMatch: noMatch,
             });
           }
         });
@@ -42,6 +47,7 @@ module.exports.index = async (req, res) => {
               tours: allTours,
               current: pageNumber,
               pages: Math.ceil(count / perPage),
+              noMatch: noMatch,
               search: false,
             });
           }

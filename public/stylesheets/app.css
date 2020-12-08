@@ -75,6 +75,11 @@ nav.navbar{
     color: #ffffff;
 }
 
+.show-container .search-title{
+    color: #ffffff;
+    text-align: center;
+}
+
 .description {
     border-radius: 20px;
     margin-bottom: 30px;

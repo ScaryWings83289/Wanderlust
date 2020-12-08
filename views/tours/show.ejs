@@ -34,7 +34,7 @@
                 <li class="list-group-item">Submitted by <%= tour.author.username%></li>
                 <li class="list-group-item"><i class="fas fa-rupee-sign"></i> <%= tour.price%> / person</li>
             </ul>
-            <%  if( currentUser && tour.author.equals(currentUser._id))  {%>
+            <%  if( currentUser && tour.author.equals(currentUser._id) || currentUser && currentUser.isAdmin)  {%>
             <div class="card-body buttons">
                 <a class="card-link btn btn-info" href="/tours/<%=tour._id%>/edit">Edit</a>
                 <form class="d-inline" action="/tours/<%=tour._id%>?_method=DELETE" method="POST">
@@ -84,7 +84,7 @@
                 </p>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">By <%= review.author.username%></h6> -->
                 <p class="card-text">Review: <%= review.body %></p>
-                <%  if( currentUser && review.author.equals(currentUser._id))  {%>
+                <%  if( currentUser && review.author.equals(currentUser._id) || currentUser && currentUser.isAdmin)  {%>
                 <form action="/tours/<%=tour._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
                     <button class="btn btn-sm btn-danger">Delete</button>
                 </form>

@@ -1,4 +1,5 @@
 <% layout('layouts/boilerplate')%>
+
 <div id="cluster-map"></div>
 <div class="container show-container">
     <div class="section-title">
@@ -11,7 +12,11 @@
         </form>
     </div>
 
+    <% if(noMatch !== null) { %>
+        <h3 class="search-title"><%= noMatch %></h3>
+        <% } %>
     <% for (let tour of tours){%>
+
     <div class="card description">
         <div class="row">
             <div class="col-md-4">

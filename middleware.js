@@ -26,21 +26,23 @@ module.exports.validateTour = (req, res, next) => {
 module.exports.isAuthor = async (req, res, next) => {
   const { id } = req.params;
   const tour = await Tour.findById(id);
-  if (!tour.author.equals(req.user._id)) {
+  if (tour.author.equals(req.user._id) || req.user.isAdmin) {
+    next();
+  } else {
     req.flash("error", "You do not have permission to do that!");
     return res.redirect(`/tours/${id}`);
   }
-  next();
 };
 
 module.exports.isReviewAuthor = async (req, res, next) => {
   const { id, reviewId } = req.params;
   const review = await Review.findById(reviewId);
-  if (!review.author.equals(req.user._id)) {
+  if (review.author.equals(req.user._id) || req.user.isAdmin) {
+    next();
+  } else {
     req.flash("error", "You do not have permission to do that!");
     return res.redirect(`/tours/${id}`);
   }
-  next();
 };
 
 module.exports.validateReview = (req, res, next) => {
