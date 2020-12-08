@@ -21,7 +21,7 @@ module.exports.index = async (req, res) => {
             res.redirect("back");
           } else {
             if (allTours.length < 1) {
-              noMatch = "No tours match that query, please try again.";
+              noMatch = "No tours matches that query, please try again.";
             }
             res.render("tours/index", {
               tours: allTours,

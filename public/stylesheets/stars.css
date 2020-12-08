@@ -9,6 +9,8 @@ body{
   background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+/* ========================================================================================================== */
+/* SHOW A TOUR PAGE */
 .show{
   margin-bottom: 20px;
 }
@@ -55,6 +57,10 @@ body{
   color: #33cccc;
   font-size: 16px;
   border-bottom: 1px solid #febd01;
+}
+
+.show .show-description .list-group-item a{
+  color: #33cccc;
 }
 
 .show .show-description .buttons{
@@ -191,7 +197,11 @@ body{
     font-size: 15px;
   }
 }
+/* ========================================================================================================== */
 
+
+/* ========================================================================================================== */
+/* RATINGS CSS */
 .starability-result {
   position: relative;
   width: 150px;
@@ -303,7 +313,7 @@ body{
 .starability-basic > label {
   position: relative;
   display: inline-block;
-  float: left;
+  /* float: left; */
   width: 30px;
   height: 30px;
   font-size: 0.1em;
@@ -382,3 +392,4 @@ body{
     display: none;
   }
 }
+/* =========================================================================================================== */

@@ -23,6 +23,7 @@
     "express-session": "^1.17.1",
     "helmet": "^4.2.0",
     "joi": "^17.3.0",
+    "locus": "^2.0.4",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
     "mongoose": "^5.10.15",

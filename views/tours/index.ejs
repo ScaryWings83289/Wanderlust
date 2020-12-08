@@ -13,14 +13,14 @@
     </div>
 
     <% if(noMatch !== null) { %>
-        <h3 class="search-title"><%= noMatch %></h3>
-        <% } %>
-    <% for (let tour of tours){%>
+        <h3 class="search-title mb-4"><%= noMatch %></h3>
+    <% } %>
 
+    <% for (let tour of tours){%>
     <div class="card description">
         <div class="row">
             <div class="col-md-4">
-                <%if(tour.images.length) {%>
+                <% if(tour.images.length) {%>
                 <img class="img-fluid" alt="" src="<%=tour.images[0].url%>">
                 <% }else {%>
                 <img class="img-fluid" alt=""

@@ -8,6 +8,10 @@ const UserSchema = new Schema({
     required: true,
     unique: true,
   },
+  avatar: String,
+  firstName: String,
+  lastName: String,
+  description: String,
   isAdmin: {
     type: Boolean,
     default: false,

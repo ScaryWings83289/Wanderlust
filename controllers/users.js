@@ -9,8 +9,23 @@ module.exports.renderRegister = (req, res) => {
 
 module.exports.register = async (req, res, next) => {
   try {
-    const { email, username, password } = req.body;
-    const user = new User({ email, username });
+    const {
+      email,
+      username,
+      password,
+      firstName,
+      lastName,
+      avatar,
+      description,
+    } = req.body;
+    const user = new User({
+      email,
+      username,
+      firstName,
+      lastName,
+      avatar,
+      description,
+    });
     if (req.body.adminCode === "secretcode123") {
       user.isAdmin = true;
     }
