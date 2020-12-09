@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Tour = require("../models/tours");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
@@ -223,4 +224,23 @@ module.exports.reset = (req, res) => {
       res.redirect("/tours");
     }
   );
+};
+
+module.exports.renderUser = (req, res) => {
+  User.findById(req.params.id, function (err, foundUser) {
+    if (err) {
+      req.flash("error", "Something went wrong.");
+      return res.redirect("/");
+    }
+    Tour.find()
+      .where("author")
+      .equals(foundUser._id)
+      .exec(function (err, tours) {
+        if (err) {
+          req.flash("error", "Something went wrong.");
+          return res.redirect("/");
+        }
+        res.render("users/show", { user: foundUser, tours: tours });
+      });
+  });
 };
