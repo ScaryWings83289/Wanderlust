@@ -1,11 +1,19 @@
 <% layout('layouts/boilerplate')%>
 
 <section>
-    <div class="container-fluid">
+    <div class="container-fluid register">
         <div class="user singinBx">
             <div class="formBx">
                 <form action="/register" method="POST" novalidate>
                     <header><span class="fa fa-users"></span></header>
+                    <input type="text" name="firstName" placeholder="First Name" required> 
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <input type="text" name="lastName" placeholder="Last Name" required> 
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
                     <input type="text" name="username" placeholder="Username" autofocus required>
                     <div class="valid-feedback">
                         Looks good!
@@ -18,15 +26,7 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    <input type="text" name="firstName" placeholder="First Name" required> 
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <input type="text" name="lastName" placeholder="Last Name" required> 
-                    <div class="valid-feedback">
-                        Looks good!
-                    </div>
-                    <input type="text" name="avatar" placeholder="avatar url" required> 
+                    <input type="text" name="avatar" placeholder="Profile Photo URL" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>

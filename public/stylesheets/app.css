@@ -177,6 +177,10 @@ nav.navbar{
     }
     .show-container .section-title h1 {
         font-size: 1.2rem;
+        margin-top: 10px;
+    }
+    .show-container .search-title{
+        font-size: 1rem;
     }
     .description .img-fluid{
         height: 200px;

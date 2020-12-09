@@ -7,25 +7,27 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* =========================================================================================================== */
+/* LOGIN PAGE */
 section{
     position: relative;
-    min-height: 89vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-section .container-fluid {
+section .login {
     position: relative;
     width: 1000px;
-    height: 750px;
+    height: 550px;
     box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
     overflow: hidden;
     border-radius: 20px;
 }
 
-section .container-fluid .user{
+section .login .user{
     position: absolute;
     top: 0;
     left: 0;
@@ -34,15 +36,14 @@ section .container-fluid .user{
     display: flex;
 }
 
-section .container-fluid .user .imgBx{
+section .login .user .imgBx{
     position: relative;
     width: 50%;
     height: 100%;
-    /* background: #ffff00; */
     transition: 0.5s;
 }
 
-section .container-fluid .user .imgBx img{
+section .login .user .imgBx img{
     position: absolute;
     top: 0;
     left: 0;
@@ -51,7 +52,7 @@ section .container-fluid .user .imgBx img{
     object-fit: cover;
 }
 
-section .container-fluid .user .formBx{
+section .login .user .formBx{
     position: relative;
     width: 50%;
     height: 100%;
@@ -63,7 +64,7 @@ section .container-fluid .user .formBx{
     transition: 0.5s;
 }
 
-section .container-fluid .user .formBx header{
+section .login .user .formBx header{
   color: #000000;
   font-size: 33px;
   font-weight: 600;
@@ -71,7 +72,7 @@ section .container-fluid .user .formBx header{
   font-family: 'Montserrat',sans-serif;
 }
 
-section .container-fluid .user .formBx header span {
+section .login .user .formBx header span {
   height: 70px;
   width: 70px;
   margin: 0 auto;
@@ -82,12 +83,12 @@ section .container-fluid .user .formBx header span {
   align-items: center;
 }
 
-section .container-fluid .user .formBx header span:hover{
+section .login .user .formBx header span:hover{
   color: #ffffff;
   background-color: #000000;
 }
 
-section .container-fluid .user .formBx form h2{
+section .login .user .formBx form h2{
     font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
@@ -98,7 +99,7 @@ section .container-fluid .user .formBx form h2{
     color: #555;
 }
 
-section .container-fluid .user .formBx form input{
+section .login .user .formBx form input{
     position: relative;
     width: 100%;
     padding: 10px;
@@ -114,7 +115,7 @@ section .container-fluid .user .formBx form input{
     font-weight: 300;
 }
 
-section .container-fluid .user .formBx form textarea{
+section .login .user .formBx form textarea{
     position: relative;
     width: 100%;
     padding: 10px;
@@ -129,7 +130,7 @@ section .container-fluid .user .formBx form textarea{
     font-weight: 300;
 }
 
-section .container-fluid .user .formBx form button{
+section .login .user .formBx form button{
     width: 100%;
     padding: 10px;
     background: #677eff;
@@ -145,11 +146,11 @@ section .container-fluid .user .formBx form button{
     transition: 0.5s;
 }
 
-section .container-fluid .user .formBx form button:hover {
+section .login .user .formBx form button:hover {
     background:  #405CFC;
 }
 
-section .container-fluid .user .formBx form .forgot{
+section .login .user .formBx form .forgot{
     position: relative;
     text-align: center;
     margin-top: 20px;
@@ -159,12 +160,12 @@ section .container-fluid .user .formBx form .forgot{
     margin-bottom: 0px;
 }
 
-section .container-fluid .user .formBx form .forgot a{
+section .login .user .formBx form .forgot a{
     text-decoration: none;
     color: #405CFC;
 }
 
-section .container-fluid .user .formBx form .signup{
+section .login .user .formBx form .signup{
     position: relative;
     text-align: center;
     margin-top: 10px;
@@ -175,7 +176,7 @@ section .container-fluid .user .formBx form .signup{
     font-weight: 300;
 }
 
-section .container-fluid .user .formBx form .signup a{
+section .login .user .formBx form .signup a{
     font-weight: 600;
     text-decoration: none;
     color: #677eff;
@@ -185,18 +186,214 @@ section .container-fluid .user .formBx form .signup a{
     section {
         padding: 0px;
     }
-    section .container-fluid{
+    section .login{
         max-height: 70vh;
         max-width: 400px;
     }
-    section .container-fluid .imgBx{
+    section .login .imgBx{
         display: none;
     }
-    section .container-fluid .user .formBx{
+    section .login .user .formBx{
         width: 100%;
         padding: 10px;
     }
 }
+/* ========================================================================================================== */
+
+
+/* ========================================================================================================== */
+/* SIGNUP PAGE */
+section{
+    position: relative;
+    min-height: 89vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+section .register {
+    position: relative;
+    width: 1000px;
+    min-height: 900px;
+    box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+section .register .user{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+section .register .user .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    transition: 0.5s;
+}
+
+section .register .user .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .register .user .formBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: 0.5s;
+}
+
+section .register .user .formBx header{
+  color: #000000;
+  font-size: 33px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  font-family: 'Montserrat',sans-serif;
+}
+
+section .register .user .formBx header span {
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section .register .user .formBx header span:hover{
+  color: #ffffff;
+  background-color: #000000;
+}
+
+section .register .user .formBx form h2{
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+section .register .user .formBx form input{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333333;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+section .register .user .formBx form textarea{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333333;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 8px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+section .register .user .formBx form button{
+    width: 100%;
+    padding: 10px;
+    background: #677eff;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+section .register .user .formBx form button:hover {
+    background:  #405CFC;
+}
+
+section .register .user .formBx form .forgot{
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 0.7px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+
+section .register .user .formBx form .forgot a{
+    text-decoration: none;
+    color: #405CFC;
+}
+
+section .register .user .formBx form .signup{
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #555555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+section .register .user .formBx form .signup a{
+    font-weight: 600;
+    text-decoration: none;
+    color: #677eff;
+}
+
+@media (max-width: 992px){
+    section {
+        padding: 0px 0px 20px 0px;
+    }
+    section .register{
+        max-height: 90vh;
+        max-width: 400px;
+    }
+    section .register .imgBx{
+        display: none;
+    }
+    section .register .user .formBx{
+        width: 100%;
+        padding: 10px;
+    }
+}
+/* ===========================================================================================================*/
+
 
 /* ========================================================================================================== */
 /* SHOW A USER PAGE */
@@ -209,7 +406,7 @@ section .container-fluid .user .formBx form .signup a{
 
 .info .card img {
     width: 100%;
-    height: 400px;
+    height: 350px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
