@@ -4,37 +4,40 @@
     <div class="container-fluid register">
         <div class="user singinBx">
             <div class="formBx">
-                <form action="/register" method="POST" novalidate>
+                <form action="/register" method="POST" novalidate enctype="multipart/form-data">
                     <header><span class="fa fa-users"></span></header>
-                    <input type="text" name="firstName" placeholder="First Name" required> 
+                    <input type="text" class="inputs" name="firstName" placeholder="First Name" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    <input type="text" name="lastName" placeholder="Last Name" required> 
+                    <input type="text" class="inputs" name="lastName" placeholder="Last Name" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    <input type="text" name="username" placeholder="Username" autofocus required>
+                    <input type="text" class="inputs" name="username" placeholder="Username" autofocus required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="email" class="inputs" name="email" placeholder="Email Address" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    <input type="password" name="password" placeholder="Password" required> 
+                    <input type="password" class="inputs" name="password" placeholder="Password" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    <input type="text" name="avatar" placeholder="Profile Photo URL" required> 
-                    <div class="valid-feedback">
-                        Looks good!
+                    <div class="form-file custom-file">
+                        <input type="file" class="form-file-input" id="avatar" name="avatar">
+                        <label class="form-file-label" for="avatar">
+                            <span class="form-file-text custom-file-label">Choose Profile Photo</span>
+                            <span class="form-file-button">Browse</span>
+                        </label>
                     </div>
                     <textarea class="form-control" type="text" name="description" placeholder="Tell us about yourself" required></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
-                    <input type="text" name="adminCode" placeholder="Admin code" required> 
+                    <input type="text" class="inputs" name="adminCode" placeholder="Admin code" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>

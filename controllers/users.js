@@ -27,6 +27,7 @@ module.exports.register = async (req, res, next) => {
       avatar,
       description,
     });
+    user.avatar = req.files.map((f) => ({ url: f.path, filename: f.filename }));
     if (req.body.adminCode === "secretcode123") {
       user.isAdmin = true;
     }

@@ -72,7 +72,6 @@ module.exports.createTour = async (req, res, next) => {
   tour.images = req.files.map((f) => ({ url: f.path, filename: f.filename }));
   tour.author = req.user._id;
   await tour.save();
-  console.log(tour);
   req.flash("success", "Successfully made a new tour!");
   res.redirect(`/tours/${tour._id}`);
 };
