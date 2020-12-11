@@ -204,6 +204,9 @@ body{
  .review .card .card-body .card-text{
     font-size: 13px;
   }
+  .review .card .card-body .btn-info{
+    font-size: 15px;
+  }
   .review .card .card-body .btn-danger{
     font-size: 15px;
   }

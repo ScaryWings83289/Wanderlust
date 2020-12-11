@@ -169,6 +169,9 @@ nav.navbar{
 }
 
 @media(max-width: 600px){
+    .navbar .container-fluid{
+        padding: 3px 20px
+    }
     .show-container {
         padding: 0px;
     }
@@ -320,8 +323,14 @@ nav.navbar{
 }
 
 @media (max-width: 600px){
+    .navbar .container-fluid{
+        padding: 3px 20px
+    }
     .new {
         margin-top: 0px;
+    }
+    .new .section-title h1{
+        font-size: 2rem;
     }
 }
 /* ========================================================================================================== */
@@ -439,8 +448,14 @@ nav.navbar{
 }
 
 @media (max-width: 600px){
+    .navbar .container-fluid{
+        padding: 3px 20px
+    }
     .edit {
         margin-top: 0px;
+    }
+    .edit .section-title h1{
+        font-size: 2rem;
     }
 }
 /* =========================================================================================================== */
