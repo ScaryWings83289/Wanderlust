@@ -3,6 +3,7 @@
 <section class="register-section">
     <div class="container-fluid register">
         <div class="user singinBx">
+            
             <div class="formBx">
                 <form action="/register" method="POST" novalidate enctype="multipart/form-data">
                     <header><span class="fa fa-users"></span></header>
@@ -10,22 +11,27 @@
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+
                     <input type="text" class="inputs" name="lastName" placeholder="Last Name" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+
                     <input type="text" class="inputs" name="username" placeholder="Username" autofocus required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+
                     <input type="email" class="inputs" name="email" placeholder="Email Address" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+
                     <input type="password" class="inputs" name="password" placeholder="Password" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+
                     <div class="form-file custom-file">
                         <input type="file" class="form-file-input" id="avatar" name="avatar">
                         <label class="form-file-label" for="avatar">
@@ -33,21 +39,27 @@
                             <span class="form-file-button">Browse</span>
                         </label>
                     </div>
+
                     <textarea class="form-control" type="text" name="description" placeholder="Tell us about yourself" required></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+
                     <input type="text" class="inputs" name="adminCode" placeholder="Admin code" required> 
                     <div class="valid-feedback">
                         Looks good!
                     </div>
+
                     <button>Sign Up</button>
+
                     <p class="signup">Already have an account ? <a href="/login">Sign in.</a></p>
                 </form>
             </div>
+
             <div class="imgBx">
                 <img src="https://images.unsplash.com/photo-1539183204366-63a0589187ab?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FtcGluZ3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=1000&q=60" alt="1">
             </div>
+
         </div>
     </div>
 </section>

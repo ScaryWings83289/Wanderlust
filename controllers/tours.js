@@ -4,6 +4,7 @@ const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
 const { cloudinary } = require("../cloudinary");
 
+//INDEX - show all tours
 module.exports.index = async (req, res) => {
   var perPage = 4;
   var pageQuery = parseInt(req.query.page);
@@ -56,10 +57,12 @@ module.exports.index = async (req, res) => {
   }
 };
 
+//NEW - show form to create new tour
 module.exports.renderNewForm = (req, res) => {
   res.render("tours/new");
 };
 
+//CREATE - add new tour to DB
 module.exports.createTour = async (req, res, next) => {
   const geoData = await geocoder
     .forwardGeocode({
@@ -76,7 +79,9 @@ module.exports.createTour = async (req, res, next) => {
   res.redirect(`/tours/${tour._id}`);
 };
 
+// SHOW - shows more info about one tour
 module.exports.showTour = async (req, res) => {
+  //find the tour with provided ID
   const tour = await Tour.findById(req.params.id)
     .populate({
       path: "reviews",
@@ -89,9 +94,11 @@ module.exports.showTour = async (req, res) => {
     req.flash("error", "Cannot find that tour!");
     return res.redirect("/tours");
   }
+  //render show template with that tour
   res.render("tours/show", { tour });
 };
 
+// EDIT - show form to edit a tour
 module.exports.renderEditForm = async (req, res) => {
   const { id } = req.params;
   const tour = await Tour.findById(id);
@@ -102,9 +109,10 @@ module.exports.renderEditForm = async (req, res) => {
   res.render("tours/edit", { tour });
 };
 
+// UPDATE - update info of a particular tour
 module.exports.updateTour = async (req, res) => {
   const { id } = req.params;
-  console.log(req.body);
+  // find and update the correct campground
   const tour = await Tour.findByIdAndUpdate(id, { ...req.body.tour });
   const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
   tour.images.push(...imgs);
@@ -118,9 +126,11 @@ module.exports.updateTour = async (req, res) => {
     });
   }
   req.flash("success", "Successfully updated tour!");
+  //redirect somewhere(show page)
   res.redirect(`/tours/${tour._id}`);
 };
 
+// DELETE - delete a tour from DB
 module.exports.deleteTour = async (req, res) => {
   const { id } = req.params;
   await Tour.findByIdAndDelete(id);
@@ -128,6 +138,7 @@ module.exports.deleteTour = async (req, res) => {
   res.redirect("/tours");
 };
 
+// FUZZY SEARCH USING REGULAR EXPRESSION
 function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 }

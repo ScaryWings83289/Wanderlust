@@ -4,6 +4,7 @@
     <div class="section-title">
         <h1>New Tour</h1>
     </div>
+
     <div class="col-md-6 new-description">
         <form action="/tours" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
             <div class="mb-3">
@@ -13,6 +14,7 @@
                     Looks good!
                 </div>
             </div>
+
             <div class="mb-3">
                 <label class="form-label" for="location">Location</label>
                 <input class="form-control inputs" type="text" id="location" name="tour[location]" required>
@@ -20,6 +22,7 @@
                     Looks good!
                 </div>
             </div>
+
             <div class="mb-3">
                 <label class="form-label" for="price">Tour Price</label>
                 <div class="input-group">
@@ -39,6 +42,7 @@
                     Looks good!
                 </div>
             </div>
+
             <div class="mb-3">
                 <div class="form-file custom-file">
                     <input type="file" class="form-file-input" id="image" name="image" multiple>
@@ -48,10 +52,13 @@
                     </label>
                 </div>
             </div>
+
             <div class="my-4 text-center">
                 <button class="button">Add Tour</button>
             </div>
+
             <p class="text-center">Go back <a href="/tours">All Tours</a></p>
+            
         </form>
     </div>
 </div>

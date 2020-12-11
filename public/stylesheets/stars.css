@@ -257,8 +257,6 @@ body{
 }
 
 .edit .edit-description button {
-  /* display: block;
-  margin: 0 auto; */
   border-radius: 20px;
   padding: 5px 20px;
   font-size: 18px;
@@ -267,6 +265,18 @@ body{
 @media (max-width: 600px){
   .edit {
     margin-top: 0px;
+  }
+  .edit .section-title h1 {
+    font-size: 2rem;
+  }
+  .edit .edit-description .form-label{
+    font-size: 16px;
+  }
+  .edit .edit-description textarea {
+    font-size: 15px;
+  }
+  .edit .edit-description button {
+    font-size: 16px;
   }
 }
 /*  */

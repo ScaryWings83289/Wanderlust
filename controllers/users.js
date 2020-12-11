@@ -4,10 +4,12 @@ var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
 
+// SHOW REGISTER FORM
 module.exports.renderRegister = (req, res) => {
   res.render("users/register");
 };
 
+// HANDLE SIGN UP LOGIC
 module.exports.register = async (req, res, next) => {
   try {
     const {
@@ -43,10 +45,12 @@ module.exports.register = async (req, res, next) => {
   }
 };
 
+// SHOW LOGIN FORM
 module.exports.renderLogin = (req, res) => {
   res.render("users/login");
 };
 
+// HANDLE LOGIN LOGIC
 module.exports.login = (req, res) => {
   req.flash("success", "Welcome back!");
   const redirectUrl = req.session.returnTo || "/tours";
@@ -54,6 +58,7 @@ module.exports.login = (req, res) => {
   res.redirect(redirectUrl);
 };
 
+// HANDLE LOGOUT LOGIC
 module.exports.logout = (req, res) => {
   req.logout();
   // req.session.destroy();
@@ -61,10 +66,12 @@ module.exports.logout = (req, res) => {
   res.redirect("/tours");
 };
 
+// SHOW FORGOT PASSWORD FORM
 module.exports.renderForgot = (req, res) => {
   res.render("users/forgot");
 };
 
+// HANDLE FORGOT PASSWORD LOGIC
 module.exports.forgot = (req, res, next) => {
   async.waterfall(
     [
@@ -80,10 +87,8 @@ module.exports.forgot = (req, res, next) => {
             req.flash("error", "No account with that email address exists.");
             return res.redirect("/forgot");
           }
-
           user.resetPasswordToken = token;
           user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-
           user.save(function (err) {
             done(err, token, user);
           });
@@ -138,6 +143,7 @@ module.exports.forgot = (req, res, next) => {
   );
 };
 
+// SHOW RESET PASSWORD FORM
 module.exports.renderReset = (req, res) => {
   User.findOne(
     {
@@ -154,6 +160,7 @@ module.exports.renderReset = (req, res) => {
   );
 };
 
+// HANDLE RESET PASSWORD LOGIC
 module.exports.reset = (req, res) => {
   async.waterfall(
     [
@@ -175,7 +182,6 @@ module.exports.reset = (req, res) => {
               user.setPassword(req.body.password, function (err) {
                 user.resetPasswordToken = undefined;
                 user.resetPasswordExpires = undefined;
-
                 user.save(function (err) {
                   req.logIn(user, function (err) {
                     done(err, user);
@@ -227,6 +233,7 @@ module.exports.reset = (req, res) => {
   );
 };
 
+// SHOW DASHBOARD OF A USER
 module.exports.renderUser = (req, res) => {
   User.findById(req.params.id, function (err, foundUser) {
     if (err) {

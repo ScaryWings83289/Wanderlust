@@ -5,6 +5,7 @@
     <div class="section-title">
         <h1>Edit Review</h1>
     </div>
+
     <div class="col-md-6 edit-description">
         <form action="/tours/<%= id %>/reviews/<%= review._id %>?_method=PUT" method="POST" novalidate class="validated-form">
             <fieldset class="starability-basic">
@@ -20,6 +21,7 @@
                 <input type="radio" id="first-rate5" name="review[rating]" value="5" />
                 <label for="first-rate5" title="Amazing">5 stars</label>
             </fieldset>
+
             <div class="mb-3 review-body">
                 <label class="form-label" for="body">Review text</label>
                 <textarea class="form-control" name="review[body]" id="body" cols="30" rows="3" required><%= review.body %></textarea>
@@ -27,7 +29,9 @@
                     Looks good!
                 </div>
             </div>
+
             <button class="btn btn-info">Update Review</button>
+            
         </form>
     </div>
 </div>

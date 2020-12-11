@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const express = require("express");
+const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
@@ -17,6 +18,7 @@ const helmet = require("helmet");
 
 const mongoSanitize = require("express-mongo-sanitize");
 
+// Requiring Routes
 const userRoutes = require("./routes/users");
 const toursRoutes = require("./routes/tours");
 const reviewRoutes = require("./routes/reviews");
@@ -37,8 +39,6 @@ db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
   console.log("Database connected");
 });
-
-const app = express();
 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
@@ -67,6 +67,7 @@ store.on("error", function (e) {
   console.log("SESSION STORE ERROR");
 });
 
+// PASSPORT CONFIGURATION
 const sessionConfig = {
   store: store,
   name: "session",
@@ -140,7 +141,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
-
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

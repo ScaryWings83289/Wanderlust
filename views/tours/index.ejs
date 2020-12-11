@@ -1,10 +1,12 @@
 <% layout('layouts/boilerplate')%>
 
 <div id="cluster-map"></div>
+
 <div class="container show-container">
     <div class="section-title">
         <h1>Search and view our Tours</h1>
     </div>
+
     <div class="mb-4">
         <form action="/tours" method="GET" class="d-flex">
             <input class="form-control form-search mr-2" type="search" name="search" placeholder="Search a tour" aria-label="Search">
@@ -17,28 +19,29 @@
     <% } %>
 
     <% for (let tour of tours){%>
-    <div class="card description">
-        <div class="row">
-            <div class="col-md-4">
-                <% if(tour.images.length) {%>
-                <img class="img-fluid" alt="" src="<%=tour.images[0].url%>">
-                <% }else {%>
-                <img class="img-fluid" alt=""
-                    src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
-                <% } %>
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title"><%= tour.title %> </h5>
-                    <p class="card-text"><%= tour.description.substring(0, 250) %></p>
-                    <p class="card-text">
-                        <small><%= tour.location%></small>
-                    </p>
-                    <button><a href="/tours/<%=tour._id%>">View <%=tour.title%></a></button>
+        <div class="card description">
+            <div class="row">
+                <div class="col-md-4">
+                    <% if(tour.images.length) {%>
+                        <img class="img-fluid" alt="" src="<%=tour.images[0].url%>">
+                    <% }else {%>
+                        <img class="img-fluid" alt="" src="https://res.cloudinary.com/douqbebwk/image/upload/v1600103881/YelpCamp/lz8jjv2gyynjil7lswf4.png">
+                    <% } %>
                 </div>
+
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= tour.title %> </h5>
+                        <p class="card-text"><%= tour.description.substring(0, 250) %></p>
+                        <p class="card-text">
+                            <small><%= tour.location%></small>
+                        </p>
+                        <button><a href="/tours/<%=tour._id%>">View <%=tour.title%></a></button>
+                    </div>
+                </div>
+                
             </div>
         </div>
-    </div>
     <% }%>
     
     <nav aria-label="Page navigation">

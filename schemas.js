@@ -1,6 +1,7 @@
 const BaseJoi = require("joi");
 const sanitizeHtml = require("sanitize-html");
 
+// Setting up the joi middleware
 const extension = (joi) => ({
   type: "string",
   base: joi.string(),
@@ -24,6 +25,7 @@ const extension = (joi) => ({
 
 const Joi = BaseJoi.extend(extension);
 
+// Adding validation to tour schema using joi
 module.exports.tourSchema = Joi.object({
   tour: Joi.object({
     title: Joi.string().required().escapeHTML(),
@@ -34,6 +36,7 @@ module.exports.tourSchema = Joi.object({
   deleteImages: Joi.array(),
 });
 
+// Adding validation to review schema using joi
 module.exports.reviewSchema = Joi.object({
   review: Joi.object({
     rating: Joi.number().required().min(1).max(5),
