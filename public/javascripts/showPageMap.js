@@ -12,7 +12,7 @@ new mapboxgl.Marker()
   .setLngLat(tour.geometry.coordinates)
   .setPopup(
     new mapboxgl.Popup({ offset: 25 }).setHTML(
-      `<h3>${tour.title}</h3><p>${tour.location}</p>`
+      `<h5>${tour.title}</h5><p style="margin-bottom: 0px">${tour.location}</p>`
     )
   )
   .addTo(map);

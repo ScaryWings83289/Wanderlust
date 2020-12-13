@@ -53,8 +53,10 @@ const TourSchema = new Schema(
 
 TourSchema.virtual("properties.popUpMarkup").get(function () {
   return `
-    <strong><a href="/tours/${this._id}">${this.title}</a><strong>
-    <p>${this.description.substring(0, 20)}...</p>`;
+    <strong><a style="font-size: 16px" href="/tours/${
+      this._id
+    }">${this.title}</a><strong>
+    <p>${this.description.substring(0, 25)}...</p>`;
 });
 
 TourSchema.post("findOneAndDelete", async function (doc) {

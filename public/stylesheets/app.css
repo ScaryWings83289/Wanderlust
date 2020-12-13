@@ -4,9 +4,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #222222;
 }
 
 nav.navbar{
@@ -94,6 +92,13 @@ nav.navbar{
     border-radius: 20px;
     width: 100%;
     height: 300px;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.description:hover .img-fluid{
+    opacity: 1;
 }
 
 .description .col-md-8{
