@@ -88,17 +88,23 @@ nav.navbar{
     box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
 }
 
+.description .col-lg-4{
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 0px;
+}
+
 .description .img-fluid{
     border-radius: 20px;
     width: 100%;
-    min-height: 320px;
-    opacity: 0.7;
+    height: 320px;
+    object-fit: cover;
     cursor: pointer;
     transition: all .5s ease;
 }
 
 .description:hover .img-fluid{
-    opacity: 1;
+    transform: scale(1.1);
 }
 
 .description .col-lg-8{
@@ -190,8 +196,17 @@ nav.navbar{
     .show-container .search-title{
         font-size: 1rem;
     }
+    .description .col-lg-4{
+        margin: 0px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
     .description .img-fluid{
-        height: 200px;
+        opacity: 0.7;
+    }
+    .description:hover .img-fluid{
+        transform: none;
+        opacity: 1;
     }
     .description .card-body .card-title{
         font-size: 25px;
