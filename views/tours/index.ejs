@@ -21,7 +21,7 @@
     <% for (let tour of tours){%>
         <div class="card description">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <% if(tour.images.length) {%>
                         <img class="img-fluid" alt="" src="<%=tour.images[0].url%>">
                     <% }else {%>
@@ -29,7 +29,7 @@
                     <% } %>
                 </div>
 
-                <div class="col-md-8">
+                <div class="col-lg-8">
                     <div class="card-body">
                         <h5 class="card-title"><%= tour.title %> </h5>
                         <p class="card-text"><%= tour.description.substring(0, 250) %></p>
